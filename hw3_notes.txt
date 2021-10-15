@@ -1,0 +1,92 @@
+input file:
+	contains postfix and prefix equations
+format:
+	
+	type:equation
+
+equation: randomSpaces, operations:"(/^%+-*", upper and lowercase letters
+
+possible test cases(omit for all of these):
+	
+	empty line
+	nothing before :
+	no eqaution
+	types dont match
+
+
+Data structures needed:
+	
+	-Doubly Linked List
+	-Linked Stack
+	
+Doubly functions:
+	
+	convertList(prefix/postfix/position/all)
+	
+	parameter = prefix (converts everything to prefix)
+	parameter = postfix(converts everything to postfix)
+	parameter = all(switch everything(postfix <-> prefix))
+	parameter = position(position => postfix <-> prefix)
+
+	removeList(postfix/prefix/position/all)
+	
+	parameter = prefix(deletes all prefix)
+	parameter = postfix(deletes all postfix)
+	parameter = position(deletes at position)
+	parameter = all(NUKE!!!!!)
+
+	printList()
+	
+	prints type and equation
+	empty if empty
+	
+	printListEmpty()
+	
+	prints backwards same sructure as print
+
+	pushReserve(postfix/prefix/all/position)
+	
+	parameter = postfix(removes all postfix from list and puts on top of stack)
+	parameter = prefix(removes all prefix from list and pushes to stack)
+	parameter = position(removes position from list and pushes to stack)
+	parameter = all(removes all from list and pushes to stack)
+	
+	popReserve(position)
+
+	adds node to certain position in list from the top of the stack
+	
+	flipReverse()
+	
+	reverses the stack
+	
+	printReserveSize(){
+	
+	-prints size of reserve
+	
+	convertReserve()
+	
+	converts the top of stack (postfix <--> prefix)
+	
+	printReserveTop()
+	
+	prints top member the same as the list print function
+	
+	emptyReserve(position)
+	
+	pops off each node from stack and adds to position on list (spice)
+	pos <= 0 add to front
+	pos >= size add to end
+
+
+
+Planning:
+
+	
+	-doubly linked list
+	-
+
+	
+
+	
+	
+	
