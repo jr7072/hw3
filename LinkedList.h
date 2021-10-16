@@ -8,7 +8,7 @@ using namespace std;
 
 struct ListNode{
 
-    string item;
+    string equation;
     string type;
     ListNode* next;
     ListNode* prev;
@@ -33,6 +33,7 @@ class LinkedList{
         ~LinkedList();
         LinkedList& operator=(const LinkedList&);
         ListNode* getHead();
+        void setHead(ListNode*);
         ListNode* getTail();
         int getSize();
         void print(ListNode*);
@@ -43,7 +44,7 @@ class LinkedList{
         void addToBeginning(string);
         string values();
         //add at end
-        void addToEnd(string);
+        void addToEnd(string, string);
         //insert at position 
         void insertAtPos(string, int);
         //remove by pointer
@@ -67,10 +68,10 @@ class LinkedList{
 
         //new functions
 
-        void convertList();
-        void removeList();
-        void splice();
-        void pushReserve(Stack<ListNode, LinkedList>&);
+        void convertList(void(*)(ListNode*, string), ListNode*, string action="null", int pos=-1000, int iter=1);//callback functionrecursive theoretical afffffffff
+        ListNode* removeList(ListNode*, string action="null", int pos=-1000, int iter=1);//recursive
+        ListNode* splice(ListNode*, ListNode*, int pos, bool start = false,int iter=1);//recursive
+        ListNode* deletePush(ListNode*, Stack<ListNode, LinkedList>&, string action="null", int pos=-1000, int iter=1);
 };
 
 #endif

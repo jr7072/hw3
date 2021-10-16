@@ -1,7 +1,6 @@
 #ifndef STACK_H 
 #define STACK_H 
 #include <iostream>
-#include "LinkedList.h"
 using namespace std;
 
 template <class T, class L>
@@ -16,17 +15,20 @@ class Stack{
     public:
 
         Stack();
-        void push(T*);
-        T* pop();
-        int getSize();
-        bool isEmpty();
-        void printSize();
-        void popReserve(L&, int);
-        void flipReserve();
-        void convertReserve(string, void(*)(), T*);
-        void printTop();
-        void emptyReserve(L&, int);
-        void write(ofstream&, T*);
+        void push(T*);//done
+        T* pop();//done
+        T* getTop();//done
+        void printChar();
+        void setBottom(T*);//???
+        int getSize();//done
+        bool isEmpty();//done
+        void printSize();//done
+        void popReserve(L&, int);//done
+        void flipReserve();//done
+        void convertReserve(void(*)(T*, string));//done
+        void printTop();//done
+        void emptyReserve(L&, int);//done
+        void write(ofstream&, T*);//done
 
 };
 
@@ -47,7 +49,7 @@ int Stack<T, L>::getSize(){
 template <class T, class L>
 bool Stack<T, L>::isEmpty(){
 
-    bool empty = false
+    bool empty = false;
     if(top == nullptr){
 
         empty = true;
@@ -57,16 +59,17 @@ bool Stack<T, L>::isEmpty(){
 }
 
 template <class T, class L>
-void Stack<T, L>::push(T* listNode){
+void Stack<T, L>::push(T* newNode){
     
     if(isEmpty()){
 
-        top=bottom=listNode;
+        top=bottom=newNode;
         size++;
+        return;
     }
 
-    listNode -> next = top;
-    top = listNode;
+    newNode -> next = top;
+    top = newNode;
     size++;
 }
 
@@ -74,11 +77,12 @@ template <class T, class L>
 T* Stack<T, L>::pop(){
 
     if(isEmpty()){
-        return;
+        return nullptr;
     }
 
     T* tmp = top;
     top = tmp -> next;
+    tmp -> next = nullptr;
     size--;
     return tmp;
 }
@@ -97,8 +101,7 @@ void Stack<T, L>::popReserve(L& List, int pos){//void until linked list is done.
     }
 
     T* popped = this -> pop();
-
-    List.splice(popped); 
+    List.splice(List.getHead(), popped, pos); 
 }
 
 template <class T, class L>
@@ -132,36 +135,41 @@ void Stack<T, L>::flipReserve(){
 
 template <class T, class L>
 
-void Stack<T, L>::convertReserve(string action, void(*converter)(), T* topRef){
+void Stack<T, L>::convertReserve(void(*converter)(T* node, string type)){
 
-    if(topRef == nullptr){
+    if(top == nullptr){
 
-        break;
+        return;
     }
 
-    string typeRef = topRef -> type;
-    topRef -> equation = converter(topRef, typeRef);
+    string action = top -> type;
+    string payload;
 
-    typeRef == "postfix" ? typeRef = "prefix" : NULL;
+    action == "prefix" ? payload = "postfix" : payload = "prefix";
 
-    this -> convertReverse(action, converter, topRef -> next);
-
+    converter(top, payload);    
 }
 
 template <class T, class L>
 
 void Stack<T, L>::printTop(){
 
-    cout << "k" << endl;
+    cout << top -> type << endl;
+    cout << top -> equation << endl;
     
+}
+
+template <class T, class L>
+void Stack<T, L>::printChar(){
+    cout << top -> data << endl;
 }
 
 template <class T, class L>
 
 void Stack<T, L>::emptyReserve(L& list, int pos){//void until LinkedList is done
 
-    list.splice(top, pos);
-
+    list.splice(list.getHead(), top, pos);
+    top = nullptr;
 }
 
 template <class T, class L>
@@ -174,5 +182,18 @@ void Stack<T, L>::write(ofstream& ofs, T* topRef){//works only for one template 
 
     ofs << topRef -> equation << endl;
     this -> write(ofs, top -> next);
+}
+template <class T, class L>
+
+T* Stack<T, L>::getTop(){
+    
+    return top;
+}
+
+template <class T, class L>
+
+void Stack<T, L>::setBottom(T* newTail){
+
+    bottom = newTail;
 }
 #endif

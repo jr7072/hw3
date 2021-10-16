@@ -29,7 +29,9 @@ void LinkedList::print(ListNode* iter){
         return;
     }
     
-    cout << iter -> item << endl;
+    cout << iter -> equation  << endl;
+    cout << iter -> type << endl;
+    cout << endl;
     print(iter -> next);
     
 }
@@ -39,7 +41,7 @@ void LinkedList::addToBeginning(string input){
     ListNode* tmp;
 
     tmp = new ListNode;
-    tmp -> item = input;
+    tmp -> equation  = input;
 
     if(head == nullptr){
         head = tail = tmp;
@@ -63,7 +65,7 @@ string LinkedList::values(){
 
     for(int i = 0; i < size; ++i){
 
-        values += iter -> item + " ";
+        values += iter -> equation  + " ";
         iter = iter -> next;
     }
 
@@ -74,13 +76,14 @@ string LinkedList::values(){
     return values;
 }
 
-void LinkedList::addToEnd(string input){
+void LinkedList::addToEnd(string equation, string type){
 
     ListNode* tmp;
 
     tmp = new ListNode;
 
-    tmp -> item = input;
+    tmp -> equation  = equation;
+    tmp -> type = type;
 
     if(head == nullptr){
 
@@ -113,7 +116,7 @@ void LinkedList::insertAtPos(string input, int pos){
 
     if (pos == size){
 
-        this -> addToEnd(input);
+        this -> addToEnd(input, "");
         return;
     }
 
@@ -122,7 +125,7 @@ void LinkedList::insertAtPos(string input, int pos){
 
     tmp = new ListNode;
 
-    tmp -> item = input;
+    tmp -> equation  = input;
 
     ListNode* iter = head;
     ListNode* nu = iter -> next;
@@ -151,7 +154,7 @@ void LinkedList::remove(string parser){
 
     if(size == 1){
         
-        remove = this -> parse(head -> item, parser);
+        remove = this -> parse(head -> equation , parser);
         if(remove){
 
             temp = head;
@@ -168,7 +171,7 @@ void LinkedList::remove(string parser){
 
     while(temp != nullptr){
 
-        remove = this -> parse(temp -> item, parser);
+        remove = this -> parse(temp -> equation , parser);
 
         if(remove){
             if(size == 1){
@@ -325,7 +328,7 @@ ListNode* LinkedList::sortedMerge(ListNode* a, ListNode* b, string type){
 
     if(type == "Alphabetically"){
 
-        if(a -> item <= b -> item){
+        if(a -> equation  <= b -> equation ){
 
             a -> next = sortedMerge(a -> next, b, type);
             tail = a -> next;
@@ -344,7 +347,7 @@ ListNode* LinkedList::sortedMerge(ListNode* a, ListNode* b, string type){
 
     }else if(type == "Length"){
 
-        if(a -> item.length() <= b -> item.length()){
+        if(a -> equation .length() <= b -> equation .length()){
 
             a -> next = sortedMerge(a -> next, b, type);
             a -> next -> prev = a;
@@ -401,7 +404,7 @@ void LinkedList::removeDoublies(){
 
         while(iter != nullptr ){
 
-            if(comparer -> item == iter -> item){
+            if(comparer -> equation  == iter -> equation ){
 
                 if(iter -> next == nullptr){
                     pu = iter -> prev;
@@ -437,7 +440,7 @@ void LinkedList::writeToFile(ofstream& ofs, ListNode* iter){
         return;
     }
 
-    ofs << iter -> item << endl;
+    ofs << iter -> equation  << endl;
     writeToFile(ofs, iter -> next);
 }
 
@@ -460,7 +463,120 @@ ListNode* LinkedList::getHead(){
     return head;
 }
 
+void LinkedList::setHead(ListNode* newHead){
+
+    head = newHead;
+}
+
 ListNode* LinkedList::getTail(){
 
     return tail;
+}
+
+//new functions!!!!!!!!!!
+
+void LinkedList::convertList(void(*converter)(ListNode*, string), ListNode* headRef, string action, int iter, int pos){
+
+    if(headRef == nullptr){ //done
+        return;
+    }
+
+
+    
+    if(headRef -> type == action || action == "all" || iter == pos){
+
+        string convert;
+        action == "prefix" ? convert = "postfix" : convert = "prefix";
+        converter(headRef, action);//testing...
+        headRef -> type = convert;
+        this -> convertList(converter, headRef -> next, action, pos, ++iter);
+    }
+
+
+
+}
+
+ListNode* LinkedList::removeList(ListNode* headRef, string action, int pos, int iter){ // neeeds to be tailfied
+    if(headRef == nullptr){
+        return headRef;
+    }
+
+    else if(headRef -> type == action || iter == pos){
+
+        return removeList(headRef -> next, action, pos, ++iter);
+    }
+
+    else {
+
+        headRef -> next = removeList(headRef -> next, action, pos, ++iter);
+        headRef -> next -> prev = headRef;
+        headRef -> prev = nullptr;
+        return headRef;
+    }
+}
+
+ListNode* LinkedList::splice(ListNode* base, ListNode* b, int pos, bool start, int iter){
+
+    if (base == nullptr){
+
+        return b;
+    }
+
+    if (b == nullptr || pos > size){
+
+        return base;
+    }
+
+    if(iter == pos || (pos <= 0)){
+
+        start = true;
+    }
+    
+    if(start){
+
+        if(iter == pos){
+
+            base -> next = splice(base -> next, b, pos, start, ++iter);
+            base -> next -> prev = base;
+            base -> prev = nullptr;
+            return base;
+
+        }else{
+
+            b -> next = splice(base, b -> next, pos, start, ++iter);
+            b -> next -> prev = b;
+            b -> prev = nullptr;
+            return b;
+        }
+    }else{
+
+        base -> next = splice(base -> next, b, pos, start, ++iter);
+        return base;
+    }
+
+   
+}
+
+ListNode* LinkedList::deletePush(ListNode* headRef, Stack<ListNode, LinkedList>& reserve, string action, int pos, int iter){ // neeeds to be tailfied
+    if(headRef == nullptr){
+        return headRef;
+    }
+
+    else if(headRef -> type == action || iter == pos){
+        
+        ListNode* test = new ListNode;
+        test -> equation = headRef -> equation;
+        test -> type = headRef -> type;
+        reserve.push(test);
+        return deletePush(headRef -> next, reserve, action, pos, ++iter);
+    
+    }   
+
+    else {
+
+        headRef -> next = deletePush(headRef -> next, reserve, action, pos, ++iter);
+        headRef -> next -> prev = headRef;
+        headRef -> prev = nullptr;
+        return headRef;
+    }
 }
