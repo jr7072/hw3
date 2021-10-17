@@ -29,11 +29,19 @@ void LinkedList::print(ListNode* iter){
         return;
     }
     
-    cout << iter -> equation  << endl;
-    cout << iter -> type << endl;
-    cout << endl;
+    cout << iter -> type << ":" << iter -> equation << endl;
     print(iter -> next);
     
+}
+
+void LinkedList::printBack(ListNode* topRef){
+
+    if(topRef == nullptr){
+        return;
+    }
+
+    printBack(topRef -> next);
+    cout << topRef -> type << ":" << topRef -> equation << endl;
 }
 
 void LinkedList::addToBeginning(string input){
@@ -475,34 +483,32 @@ ListNode* LinkedList::getTail(){
 
 //new functions!!!!!!!!!!
 
-void LinkedList::convertList(void(*converter)(ListNode*, string), ListNode* headRef, string action, int iter, int pos){
+void LinkedList::convertList(void(*converter)(ListNode*, string), ListNode* headRef, string action, int pos, int iter){
 
     if(headRef == nullptr){ //done
         return;
     }
 
 
-    
-    if(headRef -> type == action || action == "all" || iter == pos){
+    if(headRef -> type == action || action == "all" || iter == pos || ((pos <= 0) && (iter == 1))){
 
         string convert;
-        action == "prefix" ? convert = "postfix" : convert = "prefix";
-        converter(headRef, action);//testing...
-        headRef -> type = convert;
-        this -> convertList(converter, headRef -> next, action, pos, ++iter);
+        headRef -> type == "prefix" ? convert = "postfix" : convert = "prefix";
+        converter(headRef, convert);
     }
-
-
-
+    
+    convertList(converter, headRef -> next, action, pos, ++iter);
+    
 }
 
 ListNode* LinkedList::removeList(ListNode* headRef, string action, int pos, int iter){ // neeeds to be tailfied
+    
     if(headRef == nullptr){
         return headRef;
     }
 
-    else if(headRef -> type == action || iter == pos){
-
+    else if(headRef -> type == action || action == "all" || iter == pos){
+        size--;
         return removeList(headRef -> next, action, pos, ++iter);
     }
 
@@ -522,19 +528,19 @@ ListNode* LinkedList::splice(ListNode* base, ListNode* b, int pos, bool start, i
         return b;
     }
 
-    if (b == nullptr || pos > size){
+    if (b == nullptr){
 
         return base;
     }
 
-    if(iter == pos || (pos <= 0)){
+    if(iter == pos || (pos <= 0 && iter == 1) || pos > size){
 
         start = true;
     }
     
     if(start){
 
-        if(iter == pos){
+        if(iter == pos || pos > size){
 
             base -> next = splice(base -> next, b, pos, start, ++iter);
             base -> next -> prev = base;
@@ -546,6 +552,7 @@ ListNode* LinkedList::splice(ListNode* base, ListNode* b, int pos, bool start, i
             b -> next = splice(base, b -> next, pos, start, ++iter);
             b -> next -> prev = b;
             b -> prev = nullptr;
+            size++;
             return b;
         }
     }else{
@@ -562,12 +569,13 @@ ListNode* LinkedList::deletePush(ListNode* headRef, Stack<ListNode, LinkedList>&
         return headRef;
     }
 
-    else if(headRef -> type == action || iter == pos){
+    else if(headRef -> type == action || action == "all" || iter == pos){
         
         ListNode* test = new ListNode;
         test -> equation = headRef -> equation;
         test -> type = headRef -> type;
         reserve.push(test);
+        size--;
         return deletePush(headRef -> next, reserve, action, pos, ++iter);
     
     }   
@@ -575,8 +583,6 @@ ListNode* LinkedList::deletePush(ListNode* headRef, Stack<ListNode, LinkedList>&
     else {
 
         headRef -> next = deletePush(headRef -> next, reserve, action, pos, ++iter);
-        headRef -> next -> prev = headRef;
-        headRef -> prev = nullptr;
         return headRef;
     }
 }

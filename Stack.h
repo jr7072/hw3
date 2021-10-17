@@ -29,6 +29,7 @@ class Stack{
         void printTop();//done
         void emptyReserve(L&, int);//done
         void write(ofstream&, T*);//done
+        void print(T*);
 
 };
 
@@ -60,16 +61,18 @@ bool Stack<T, L>::isEmpty(){
 
 template <class T, class L>
 void Stack<T, L>::push(T* newNode){
+
+    T* tmp = newNode;
     
     if(isEmpty()){
 
-        top=bottom=newNode;
+        top=bottom=tmp;
         size++;
         return;
     }
 
-    newNode -> next = top;
-    top = newNode;
+    tmp -> next = top;
+    top = tmp;
     size++;
 }
 
@@ -101,7 +104,7 @@ void Stack<T, L>::popReserve(L& List, int pos){//void until linked list is done.
     }
 
     T* popped = this -> pop();
-    List.splice(List.getHead(), popped, pos); 
+    List.setHead(List.splice(List.getHead(), popped, pos)); 
 }
 
 template <class T, class L>
@@ -154,8 +157,7 @@ template <class T, class L>
 
 void Stack<T, L>::printTop(){
 
-    cout << top -> type << endl;
-    cout << top -> equation << endl;
+    cout << top -> type << ":" << top -> equation << endl;
     
 }
 
@@ -168,8 +170,11 @@ template <class T, class L>
 
 void Stack<T, L>::emptyReserve(L& list, int pos){//void until LinkedList is done
 
-    list.splice(list.getHead(), top, pos);
-    top = nullptr;
+    while(!isEmpty()){
+
+        T* popped = this -> pop();
+        list.setHead(list.splice(list.getHead(), popped, pos));
+    }
 }
 
 template <class T, class L>
@@ -195,5 +200,17 @@ template <class T, class L>
 void Stack<T, L>::setBottom(T* newTail){
 
     bottom = newTail;
+}
+
+template <class T, class L>
+
+void Stack<T, L>::print(T* topRef){
+
+    if(topRef == nullptr){
+        return;
+    }
+
+    cout << topRef -> data << endl;
+    print(topRef -> next);
 }
 #endif
