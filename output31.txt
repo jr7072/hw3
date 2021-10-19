@@ -2,7 +2,7 @@ List:
 postfix:AB+CD-*
 prefix:+*ABC
 
-Reversed List: 
+Reversed List:
 prefix:+*ABC
 postfix:AB+CD-*
 

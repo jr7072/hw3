@@ -200,7 +200,7 @@ bool arguments(string line){
     return isThere;
 }
 
-void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifstream& cfs){
+void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifstream& cfs, ofstream& ofs){
 
     string line;
     string function;
@@ -228,15 +228,17 @@ void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifst
 
         if(function == "printList"){
 
-            dll.print(dll.getHead());
-            cout << endl;
+            ofs << "List:" << endl;
+            dll.print(dll.getHead(), ofs);
+            ofs << endl;
 
         }
 
         else if(function == "printListBackwards"){
             
-            dll.printBack(dll.getHead());
-            cout << endl;
+            ofs << "Reversed List:" << endl;
+            dll.printBack(dll.getHead(), ofs);
+            ofs << endl;
 
         }
         else if(function == "convertList"){
@@ -245,12 +247,11 @@ void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifst
                 
                 int digit = stoi(argument);
                 dll.convertList(converter, dll.getHead(), "null", digit);
-                cout << endl;
 
             }else{
 
                 dll.convertList(converter, dll.getHead(), argument);
-                cout << endl;
+
             }
         }
         else if(function == "removeList"){
@@ -259,12 +260,11 @@ void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifst
                 
                 int digit = stoi(argument);
                 dll.setHead(dll.removeList(dll.getHead(), "null", digit));
-                cout << endl;
 
             }else{
 
                 dll.setHead(dll.removeList(dll.getHead(), argument));
-                cout << endl;
+
             }
             
         }
@@ -275,55 +275,46 @@ void executeCommands(LinkedList& dll, Stack<ListNode, LinkedList>& reserve, ifst
                 
                 int digit = stoi(argument);
                 dll.setHead(dll.deletePush(dll.getHead(), reserve, "null", digit));
-                cout << endl;
-
 
             }else{
 
                 dll.setHead(dll.deletePush(dll.getHead(), reserve, argument));
-                cout << endl;
+            
             }
 
-            
         }
         else if(function == "popReserve"){
             
             int digit = stoi(argument);
-
             reserve.popReserve(dll, digit);
-            cout << endl;
             
         }
         else if(function == "flipReserve"){
 
-            reserve.flipReserve();\
-            cout << endl;
-        
+            reserve.flipReserve();
+
         }
         else if(function == "printReserveSize"){
 
-            reserve.printSize();
-            cout << endl;
+            reserve.printSize(ofs);
+            ofs << endl;
 
         }
         else if(function == "convertReserve"){
 
             reserve.convertReserve(converter);
-            cout << endl;
             
         }
         else if(function == "printReserveTop"){
 
-            reserve.printTop();
-            cout << endl;
+            reserve.printTop(ofs);
+            ofs << endl;
             
         }
         else if(function == "emptyReserve"){
 
             int digit = stoi(argument);
-
             reserve.emptyReserve(dll, digit);
-            cout << endl;
             
         }
 
@@ -339,14 +330,17 @@ int main(int argc, char *argv[]){
     ifstream ifs(inputFileName.c_str());
     string commandFileName = am.get("command");
     ifstream cfs(commandFileName.c_str());
+    string outputFileName = am.get("output");
+    ofstream ofs(outputFileName.c_str());
     Stack<ListNode, LinkedList> reserve;
     LinkedList dll;
 
     getInput(ifs, dll);
-    executeCommands(dll, reserve, cfs);
+    executeCommands(dll, reserve, cfs, ofs);
 
-
-    //dll.setHead(dll.deletePush(dll.getHead(), reserve, "postfix"));
+    ifs.close();
+    cfs.close();
+    ofs.close();
 
     return 0;
 }

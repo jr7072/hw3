@@ -1,0 +1,13 @@
+postfix: A    B+   CD-*
+prefix:+    *A BC
+postfix: BAC-*
+prefix:+A*B/C-EF
+postfix:FE-C/B*A+
+postfix:AB-C-D/
+postfix:AB-CF*-D / E+
+prefix: +*X / B  C / F  G
+postfix: B  X + T  G * H /- A+
+postfix: A L D M U P*****
+prefix:--------Q E D FGHVCS
+postfix:LED+-SCM*+-G/
+prefix:+++++QWERTY

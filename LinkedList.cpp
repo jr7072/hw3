@@ -23,25 +23,50 @@ LinkedList::~LinkedList(){
 
 }
 
-void LinkedList::print(ListNode* iter){
+bool LinkedList::isEmpty(){
+
+    if(head == nullptr){
+
+        return true;
+    }
+
+    return false;
+}
+
+void LinkedList::print(ListNode* iter, ofstream& ofs, bool start){
 
     if(iter == nullptr){
+        if(start){
+
+            ofs << "EMPTY" << endl;
+        
+        }
+
         return;
     }
     
-    cout << iter -> type << ":" << iter -> equation << endl;
-    print(iter -> next);
+    start = false;
+    ofs << iter -> type << ":" << iter -> equation << endl;
+    print(iter -> next, ofs, start);
     
 }
 
-void LinkedList::printBack(ListNode* topRef){
+void LinkedList::printBack(ListNode* topRef, ofstream& ofs, bool start){
 
     if(topRef == nullptr){
+        
+        if(start){
+            
+            ofs << "EMPTY" << endl;
+        
+        }
+
         return;
     }
 
-    printBack(topRef -> next);
-    cout << topRef -> type << ":" << topRef -> equation << endl;
+    start = false;
+    printBack(topRef -> next, ofs, start);
+    ofs << topRef -> type << ":" << topRef -> equation << endl;
 }
 
 void LinkedList::addToBeginning(string input){
@@ -489,12 +514,12 @@ void LinkedList::convertList(void(*converter)(ListNode*, string), ListNode* head
         return;
     }
 
-
     if(headRef -> type == action || action == "all" || iter == pos || ((pos <= 0) && (iter == 1))){
 
         string convert;
         headRef -> type == "prefix" ? convert = "postfix" : convert = "prefix";
         converter(headRef, convert);
+        
     }
     
     convertList(converter, headRef -> next, action, pos, ++iter);

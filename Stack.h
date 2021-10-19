@@ -1,6 +1,7 @@
 #ifndef STACK_H 
 #define STACK_H 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 template <class T, class L>
@@ -15,6 +16,7 @@ class Stack{
     public:
 
         Stack();
+        ~Stack();
         void push(T*);//done
         T* pop();//done
         T* getTop();//done
@@ -22,11 +24,11 @@ class Stack{
         void setBottom(T*);//???
         int getSize();//done
         bool isEmpty();//done
-        void printSize();//done
+        void printSize(ofstream&);//done
         void popReserve(L&, int);//done
         void flipReserve();//done
         void convertReserve(void(*)(T*, string));//done
-        void printTop();//done
+        void printTop(ofstream&);//done
         void emptyReserve(L&, int);//done
         void write(ofstream&, T*);//done
         void print(T*);
@@ -39,6 +41,23 @@ Stack<T, L>::Stack(){
     top=bottom=nullptr;
     size = 0;
 
+}
+
+template <class T, class L>
+Stack<T, L>::~Stack(){
+
+    T* iter = top;
+    T* temp;
+
+    while(iter != nullptr){
+
+        temp = iter -> next;
+
+        delete iter;
+
+        iter = temp;
+        
+    }
 }
 
 template <class T, class L>
@@ -91,9 +110,9 @@ T* Stack<T, L>::pop(){
 }
 
 template <class T, class L>
-void Stack<T, L>::printSize(){
+void Stack<T, L>::printSize(ofstream& ofs){
 
-    cout << size << endl;
+    ofs << "Reserve Size: " << size << endl;
 }
 
 template <class T, class L>
@@ -155,9 +174,16 @@ void Stack<T, L>::convertReserve(void(*converter)(T* node, string type)){
 
 template <class T, class L>
 
-void Stack<T, L>::printTop(){
+void Stack<T, L>::printTop(ofstream& ofs){
 
-    cout << top -> type << ":" << top -> equation << endl;
+    if(isEmpty()){
+        
+        ofs << "Top of Reserve: EMPTY" << endl;
+        return; 
+    
+    }
+
+    ofs <<"Top of Reserve: "<<  top -> type << ":" << top -> equation << endl;
     
 }
 

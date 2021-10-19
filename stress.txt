@@ -1,0 +1,1062 @@
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+emptyReserve (10)
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+pushReserve (postfix)
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printReserveTop
+popReserve (2)
+printReserveTop
+printListBackwards
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+convertReserve
+flipReserve
+popReserve (0)
+printList
+emptyReserve (469)
+printList
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (2)
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+convertList (2000)
+popReserve (7)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+printList
+pushReserve (postfix)
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+printList
+printReserveSize
+printReserveTop
+popReserve (2)
+printReserveTop
+convertReserve
+flipReserve
+popReserve (2)
+printList
+emptyReserve (469)
+printList
+printList
+pushReserve (all)
+printList
+emptyReserve (92
+printList
+printList
+printListBackwards
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+printList
+printList
+printListBackwards
+convertList (postfix)
+printList
+convertList (prefix)
+printList
+convertList (all)
+printList
+convertList (5)
+printList
+convertList (2000)
+popReserve (7)

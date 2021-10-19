@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "Stack.h"
+#include <fstream>
 using namespace std;
 
 struct ListNode{
@@ -35,9 +36,10 @@ class LinkedList{
         ListNode* getHead();
         void setHead(ListNode*);
         ListNode* getTail();
+        bool isEmpty();
         int getSize();
-        void print(ListNode*);
-        void printBack(ListNode*);
+        void print(ListNode*, ofstream&, bool start = true);
+        void printBack(ListNode*, ofstream&, bool start = true);
 
         //functions mentioned in pdf
         //add at beginning

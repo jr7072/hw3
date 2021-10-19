@@ -22,5 +22,3 @@ postfix:AB-C-D/
 postfix:FE-C/B*A+
 postfix:BAC-*
 prefix:+A*B/C-EF
-
-
